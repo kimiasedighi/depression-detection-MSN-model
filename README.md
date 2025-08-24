@@ -25,7 +25,7 @@ The system includes:
 ├── msn_body.py                  # Multi-Scale Spatiotemporal Network architecture
 ├── train.py                     # Model training and evaluation script
 ├── requirements.txt             # List of dependencies
-├── processed_data/              # Output .pt tensors (C,T,J format)
+├── processed_data/              # Generated after running prepare_data.py — stores .pt tensors (C=3, T=300, J=11)
 ├── 20250110_Participant_list_1.xlsx  # Excel sheet with label metadata
 ├── missing_*.txt                # Logs for missing participants/data types
 ```
