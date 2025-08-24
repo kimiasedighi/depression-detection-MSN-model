@@ -95,6 +95,18 @@ This script will:
 - Save body pose tensors in shape **(C=3, T=300, J=11)**
 - Log any missing files per participant in `missing_*.txt`
 
+- Load body pose data from poses.json
+- Extract timestamped events from app.csv (e.g., ei_01 to ei_10, training, feedback)
+- Match these events with Kinect timestamps in .txt
+- Retrieve class labels (Depressed = 1, Healthy = 0) from 20250110_Participant_list_1.xlsx
+- Normalize joint positions (relative to the root joint)
+- Save body pose tensors in shape (C=3, T=300, J=11) to ./processed_data/
+- Log any missing or incomplete data per participant in:
+-- missing_label.txt
+-- missing_poses_json.txt
+-- missing_app_csv.txt
+-- missing_kinect_ts.txt
+
 ### Output:
 ```
 processed_data/
@@ -240,7 +252,7 @@ openpyxl
 ## 📖 Citation
 
 Adapted from the paper:
-> A Deep Multiscale Spatiotemporal Network for Assessing Depression From Facial Dynamics  
+> A Deep Multiscale Spatiotemporal Network for Assessing Depression from Facial Dynamics by Wheidima Carneiro de Melo, Eric Granger and Abdenour Hadid
 > *IEEE Transactions on Affective Computing*
 
 This repo applies the method to **Kinect body pose data**.
@@ -248,7 +260,7 @@ This repo applies the method to **Kinect body pose data**.
 ---
 
 ## 📜 License
-MIT License (or add your own)
+MIT License 
 
 ---
 
