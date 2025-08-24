@@ -88,19 +88,12 @@ python prepare_data.py
 ```
 
 This script will:
-- Load body pose data from `poses.json`
-- Extract timestamped events from `app.csv`
-- Match with Kinect timestamps in `.txt`
-- Normalize joint positions
-- Save body pose tensors in shape **(C=3, T=300, J=11)**
-- Log any missing files per participant in `missing_*.txt`
-
 - Load body pose data from poses.json
 - Extract timestamped events from app.csv (e.g., ei_01 to ei_10, training, feedback)
 - Match these events with Kinect timestamps in .txt
 - Retrieve class labels (Depressed = 1, Healthy = 0) from 20250110_Participant_list_1.xlsx
 - Normalize joint positions (relative to the root joint)
-- Save body pose tensors in shape (C=3, T=300, J=11) to ./processed_data/
+- Save body pose tensors in shape **(C=3, T=300, J=11)** to ./processed_data/
 - Log any missing or incomplete data per participant in:
 -- missing_label.txt
 -- missing_poses_json.txt
